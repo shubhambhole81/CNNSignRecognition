@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+    h1 {text-align: center;color: white;}
+    h2 {text-align: center;color: yellow;}
+    body {background-image: url("https://bit.ly/3DJO9ya");}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   </style>
+ </head>
+
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8  offset-lg-2">
+                <h1 class="mt-5">Sign Detection and Recognition Using Images</h1>
+                <h2>Speak Up With Your Sign</h2>
+                <h2>Upload Your Sign</h2>
+                <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" align="center">
+                   <label for="images"><font color="blue"><b>Upload Your Sign Image:-</b></font></label><br><br>
+                   <input type="file" id="images" name="images" style="color:blue;" accept="image/*" required><br><br><br>
+                   <button class="btn btn-primary btn-lg " onclick="predict = 'predict';">Predict!</button>
+            </div>
+        </div>
+    </div>
+    </body>
+
+
+</html>

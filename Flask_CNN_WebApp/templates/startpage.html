@@ -1,0 +1,112 @@
+<html>
+ <head>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: system-ui;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* background image with opacity */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('https://images.pexels.com/photos/164357/pexels-photo-164357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position: center;
+  background-size: cover;
+  background-norepeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.wrapper {
+  margin: 0 15px;
+  max-width: 960px;
+}
+
+h1 {
+  position: relative;
+  top: 0px;
+  animation: title 2s ease-in forwards;
+}
+
+@keyframes title {
+  0% {top: -100vh;}
+  100% {top: 0;}
+}
+
+.content {
+  margin: 25px 0 50px 0;
+  position: relative;
+  bottom: 0;
+  animation: content 2s ease-in forwards;
+}
+
+@keyframes content {
+  0% {bottom: -100vh;}
+  100% {bottom: 0;}
+}
+
+.btn {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: all .3s linear;
+  animation: btn 1.5s ease-in 1.5s forwards;
+}
+
+@keyframes btn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+   </style>
+ </head>
+ 
+<div class="wrapper">
+  <h1>Real-Time Sign Detection and Recognition</h1>
+  <p class="content">
+In this Project, initially we are going to trained a model using sign images. Then by using the
+model we are going to detect the real-time sign actions performed by the user. This work
+main focus is on creating a vision-based system able to do real-time sign language
+recognition. The reason for choosing a system based on vision relates to the fact that
+it provides a simpler and more intuitive way of communication between a human and
+a computer. Being hand-pose one of the most important communication tools in
+human’s daily life, and with the continuous advances of image and video processing
+techniques, research on human-machine interaction through gesture recognition led to
+the use of such technology in a very broad range of applications, like touch screens,
+video game consoles, virtual reality, medical applications, and sign language
+recognition. We will use Convolutional Neural Network, or CNN, model to classify the static images.  </p>
+  <a href="{{ url_for('index') }}" class="btn">Get Started </a>
+</div>
+
+</html>
